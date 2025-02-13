@@ -2,6 +2,7 @@
     import Header from './components/Header.vue';
     import Balance from './components/Balance.vue';
     import IncomeExpenses from './components/IncomeExpenses.vue';
+    import AddTransaction from './components/Addtransaction.vue';
     import {ref, computed} from 'vue'
 
     const transactions = ref([
@@ -44,6 +45,7 @@
     <div class="container">
         <Balance :total="sum"></Balance>
         <IncomeExpenses :income="moneyIn" :expense="moneyOut"></IncomeExpenses>
+        <AddTransaction></AddTransaction>
     </div>
 
 
