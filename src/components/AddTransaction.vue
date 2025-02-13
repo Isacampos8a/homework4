@@ -1,6 +1,24 @@
 <script setup>
+    import {ref, defineEmits} from 'vue'
+    const text = ref('')
+    const amount = ref('')
 
+    const emit = defineEmits([
+        'transactionSubmitted'
+    ])
 
+    const onSubmit = () =>{
+        const transactions = {
+            text: text.value,
+            amount: parseFloat(amount.value),
+        }
+
+        emit('transactionSubmitted', transactionDate)
+
+        text.value = ''
+        amount.value = ''
+    }
+ 
 </script>
 
 <template>
@@ -14,6 +32,7 @@
             <label for="amount">Enter Transaction</label>
             <input type="text" id="text" v-model="amount" placeholder="Enter Negative Value for Expenses">
         </div>
+        <button class="btn">Add Transaction</button>
 
 
     </form>
